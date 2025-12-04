@@ -31,11 +31,6 @@ export function Footer() {
                                     Projets
                                 </Link>
                             </li>
-                            <li>
-                                <Link to="/team" className="hover:text-primary transition-colors">
-                                    Équipe
-                                </Link>
-                            </li>
                         </ul>
                     </div>
 

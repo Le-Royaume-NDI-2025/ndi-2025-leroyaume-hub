@@ -11,7 +11,6 @@ export function Navbar() {
     const navLinks = [
         { to: '/', label: 'Accueil' },
         { to: '/projects', label: 'Projets' },
-        { to: '/team', label: 'Équipe' },
     ];
 
     return (
@@ -27,7 +26,7 @@ export function Navbar() {
                         />
                         <div className="absolute inset-0 h-6 w-6 opacity-0 blur-md transition-opacity group-hover:opacity-50" />
                     </div>
-                    <span className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                    <span className="text-xl font-bold">
                         Le Royaume
                     </span>
                 </Link>
@@ -56,18 +55,32 @@ export function Navbar() {
                                 <span className="sr-only">Toggle menu</span>
                             </Button>
                         </SheetTrigger>
-                        <SheetContent side="right">
-                            <div className="flex flex-col space-y-4 mt-8">
+                        <SheetContent side="right" className="w-[280px] p-0">
+                            {/* Header */}
+                            <div className="flex items-center gap-2 p-6 border-b border-border/50">
+                                <img src="/crown.png" alt="Crown" className="h-6 w-6" />
+                                <span className="text-lg font-bold">Le Royaume</span>
+                            </div>
+                            
+                            {/* Navigation Links */}
+                            <nav className="flex flex-col p-4">
                                 {navLinks.map((link) => (
                                     <Link
                                         key={link.to}
                                         to={link.to}
                                         onClick={() => setIsOpen(false)}
-                                        className="text-lg font-medium text-muted-foreground transition-colors hover:text-primary"
+                                        className="flex items-center px-4 py-3 text-base font-medium text-muted-foreground rounded-lg transition-colors hover:text-foreground hover:bg-muted"
                                     >
                                         {link.label}
                                     </Link>
                                 ))}
+                            </nav>
+
+                            {/* Footer */}
+                            <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-border/50">
+                                <p className="text-xs text-muted-foreground text-center">
+                                    Nuit de l'Info 2025
+                                </p>
                             </div>
                         </SheetContent>
                     </Sheet>

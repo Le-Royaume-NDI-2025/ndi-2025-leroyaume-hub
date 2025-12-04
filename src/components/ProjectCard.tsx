@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ExternalLink, Github } from 'lucide-react';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import type { Project } from '@/types';
@@ -11,27 +11,27 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project }: ProjectCardProps) {
     return (
-        <Card className="group flex flex-col overflow-hidden transition-all hover:shadow-lg hover:border-primary/50">
+        <Card className="group flex flex-col overflow-hidden transition-all hover:shadow-xl hover:border-primary/50 h-full">
             {/* Project Header */}
-            <CardHeader>
-                <div className="flex items-start justify-between gap-2">
-                    <CardTitle className="text-xl group-hover:text-primary transition-colors">
+            <CardHeader className="pb-4">
+                <div className="space-y-2">
+                    <Badge variant="outline" className="text-xs w-fit">
+                        {project.challengeProvider}
+                    </Badge>
+                    <CardTitle className="text-xl group-hover:text-primary transition-colors leading-tight">
                         {project.title}
                     </CardTitle>
                 </div>
-                <CardDescription className="text-sm">
-                    {project.challengeProvider} • {project.challenge}
-                </CardDescription>
             </CardHeader>
 
             {/* Project Description */}
-            <CardContent className="flex-1">
-                <p className="text-sm text-muted-foreground line-clamp-3">
+            <CardContent className="flex-1 space-y-6">
+                <p className="text-sm text-muted-foreground line-clamp-3 leading-relaxed">
                     {project.description}
                 </p>
 
                 {/* Technologies */}
-                <div className="mt-4 flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2">
                     {project.technologies.slice(0, 4).map((tech) => (
                         <Badge key={tech} variant="secondary" className="text-xs">
                             {tech}
@@ -46,19 +46,21 @@ export function ProjectCard({ project }: ProjectCardProps) {
             </CardContent>
 
             {/* Project Actions */}
-            <CardFooter className="flex gap-2">
-                <Button asChild className="flex-1" size="sm">
+            <CardFooter className="flex gap-3 pt-6 border-t border-border/50">
+                <Button asChild className="flex-1">
                     <Link to={`/projects/${project.id}`}>
                         Voir le projet
                     </Link>
                 </Button>
-                <Button asChild variant="outline" size="sm">
-                    <a href={project.repositoryUrl} target="_blank" rel="noopener noreferrer">
-                        <Github className="h-4 w-4" />
-                    </a>
-                </Button>
+                {project.repositoryUrl && (
+                    <Button asChild variant="outline" size="icon">
+                        <a href={project.repositoryUrl} target="_blank" rel="noopener noreferrer">
+                            <Github className="h-4 w-4" />
+                        </a>
+                    </Button>
+                )}
                 {project.demoUrl && (
-                    <Button asChild variant="outline" size="sm">
+                    <Button asChild variant="outline" size="icon">
                         <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
                             <ExternalLink className="h-4 w-4" />
                         </a>

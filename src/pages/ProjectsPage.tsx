@@ -56,9 +56,9 @@ export function ProjectsPage() {
     };
 
     return (
-        <div className="container py-12">
+        <div className="container mx-auto px-6 sm:px-8 lg:px-12 py-16">
             {/* Header */}
-            <div className="mb-12 space-y-4 text-center">
+            <div className="mb-16 space-y-4 text-center">
                 <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
                     Nos Projets
                 </h1>
@@ -68,7 +68,7 @@ export function ProjectsPage() {
             </div>
 
             {/* Filters & Sort */}
-            <div className="mb-8 space-y-4">
+            <div className="mb-12 space-y-6 p-6 rounded-xl bg-card/50 border border-border/50">
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                     {/* Challenge Filter */}
                     <div className="flex flex-wrap items-center gap-3">
@@ -105,8 +105,8 @@ export function ProjectsPage() {
                 </div>
 
                 {/* Technology Filter */}
-                <div className="space-y-2">
-                    <span className="text-sm font-medium">Technologies:</span>
+                <div className="space-y-3 pt-4 border-t border-border/50">
+                    <span className="text-sm font-medium text-muted-foreground">Technologies:</span>
                     <div className="flex flex-wrap gap-2">
                         {availableTechnologies.map((tech) => (
                             <Badge
@@ -155,7 +155,7 @@ export function ProjectsPage() {
 
             {/* Projects Grid */}
             {filteredProjects.length > 0 ? (
-                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
                     {filteredProjects.map((project) => (
                         <ProjectCard key={project.id} project={project} />
                     ))}

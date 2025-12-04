@@ -7,7 +7,7 @@ export interface Project {
   challenge: string;
   challengeProvider: string;
   technologies: string[];
-  repositoryUrl: string;
+  repositoryUrl?: string;
   demoUrl?: string;
   documentationUrl?: string;
   features: string[];
