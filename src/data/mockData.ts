@@ -9,6 +9,7 @@ export const teamMembers: TeamMember[] = [
         avatar: '/images/team/axelfrache.png',
         bio: 'Étudiant à Polytech Montpellier, passionné par l\'automatisation et le cloud.',
         githubUrl: 'https://github.com/axelfrache',
+        linkedinUrl: 'https://www.linkedin.com/in/axel-frache/',
     },
     {
         id: '2',
@@ -17,6 +18,7 @@ export const teamMembers: TeamMember[] = [
         avatar: '/images/team/damienmathieu.jpeg',
         bio: 'Étudiant à Polytech Montpellier, spécialisé dans l\'infrastructure et le CI/CD.',
         githubUrl: 'https://github.com/damien-mathieu1',
+        linkedinUrl: 'https://www.linkedin.com/in/damien-mathieu1/',
     },
     {
         id: '3',
@@ -25,6 +27,25 @@ export const teamMembers: TeamMember[] = [
         avatar: '/images/team/evanpaillard.jpeg',
         bio: 'Étudiant à Polytech Montpellier, expert en conteneurisation et orchestration.',
         githubUrl: 'https://github.com/evan-paillard',
+        linkedinUrl: 'https://www.linkedin.com/in/evan-paillard1/',
+    },
+    {
+        id: '4',
+        name: 'Nathan Dilhan',
+        role: 'Apprenti Ingénieur DevOps',
+        avatar: '/images/team/nathandilhan.jpeg',
+        bio: 'Étudiant à Polytech Montpellier, passionné par le DevOps et les technologies cloud.',
+        githubUrl: 'https://github.com/dilnat',
+        linkedinUrl: 'https://www.linkedin.com/in/nathan-dilhan-69045622b/',
+    },
+    {
+        id: '5',
+        name: 'Noa Despaux',
+        role: 'Apprenti Ingénieur DevOps',
+        avatar: '/images/team/noadespaux.jpeg',
+        bio: 'Étudiant à Polytech Montpellier, spécialisé dans l\'automatisation et l\'infrastructure.',
+        githubUrl: 'https://github.com/NoaDespaux',
+        linkedinUrl: 'https://www.linkedin.com/in/noa-despaux/',
     },
 ];
 
