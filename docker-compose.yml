@@ -14,7 +14,6 @@ services:
       retries: 3
       start_period: 10s
 
-  # Development service with hot reload
   throne-room-dev:
     image: node:20-alpine
     container_name: throne-room-dev
