@@ -83,7 +83,7 @@ export const projects: Project[] = [
         challengeProvider: 'CESI de Saint-Nazaire',
         technologies: ['Java', 'Spring Boot', 'React', 'TypeScript', 'Vite', 'Docker', 'Kubernetes'],
         repositoryUrl: 'https://github.com/Le-Royaume-NDI-2025/ndi-2025-leroyaume-talent-map',
-        demoUrl: 'https://talent.royaumendi.dev',
+        demoUrl: 'https://talents.royaumendi.dev',
         features: [
             'Carte interactive des talents',
             'Visualisation géographique des compétences',
