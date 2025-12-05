@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { ExternalLink, Github } from 'lucide-react';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -47,22 +46,19 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
             {/* Project Actions */}
             <CardFooter className="flex gap-3 pt-6 border-t border-border/50">
-                <Button asChild className="flex-1">
-                    <Link to={`/projects/${project.id}`}>
-                        Voir le projet
-                    </Link>
-                </Button>
-                {project.repositoryUrl && (
-                    <Button asChild variant="outline" size="icon">
-                        <a href={project.repositoryUrl} target="_blank" rel="noopener noreferrer">
-                            <Github className="h-4 w-4" />
+                {project.demoUrl && (
+                    <Button asChild className="flex-1">
+                        <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink className="h-4 w-4 mr-2" />
+                            Voir le projet
                         </a>
                     </Button>
                 )}
-                {project.demoUrl && (
-                    <Button asChild variant="outline" size="icon">
-                        <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
-                            <ExternalLink className="h-4 w-4" />
+                {project.repositoryUrl && (
+                    <Button asChild variant={project.demoUrl ? "outline" : "default"} className={project.demoUrl ? "" : "flex-1"}>
+                        <a href={project.repositoryUrl} target="_blank" rel="noopener noreferrer">
+                            <Github className="h-4 w-4 mr-2" />
+                            {!project.demoUrl && "Voir sur GitHub"}
                         </a>
                     </Button>
                 )}
